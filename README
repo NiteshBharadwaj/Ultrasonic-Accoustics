@@ -23,3 +23,16 @@ Requires
 Java Code:
 /src/DeviceDetailFragment.java holds the main java code
 /jni/native-audio-jni.c holds the C code
+
+Rest of the code is to discover device and establish connection
+
+INSTRUCTIONS TO RUN THE APPLICATION WITHOUT CHANGING ANYTHING:
+-> Enable WiFi and WiFi Direct on both mobiles
+-> Press discover button to discover services and then click on connect
+-> Once connected, it displays which of them is group owner. Group owner ip is known to whole group
+-> Make group owner the sender. Click on receive button on receiver mobile.
+-> The receiver starts recording after 10 seconds. So atleast after 10 seconds click on send button from the sender
+-> Receiver records and saves the recording with name as 1302-2492... .wav where the number indicates when the peak of the sound signal is to be observed if distance between mobiles is zero (Calculated using packet receive time)
+-> Using this cycle once creates a recording containing 9 observations
+-> This .wav file can be processed using matlab
+-> Use reporter.m file included in the project to process this wav file and plot data (Requires MATLAB)
