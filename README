@@ -1,0 +1,25 @@
+INTRODUCTION:
+
+This is an eclipse project to test ultrasonic acoustics in android mobiles. The objective is to find distance between two mobiles using the TDOA between
+a wifi and sound signals and multiplying with speed of sound. At the SDK level, it is a modification of Android Official Wifi Direct Demo. 
+Using wifi-direct, a connection is initially established between mobiles. Also, it interacts with native layer using JNI to deal with acoustics
+
+INSTRUCTIONS TO BUILD THE APPLICATION:
+
+Requires
+1) Android SDK http://developer.android.com/sdk/index.html
+2) Android NDK http://developer.android.com/tools/sdk/ndk/index.html
+3) Eclipse with ADT plugin
+
+-> From the SDK Manager, download Android SDK-Tools, Android SDK Platform-Tools, Android 4.2(API 17)
+-> Add NDK folder to system path
+-> Download ADT plugin for eclipse 
+-> Add project folder to eclipse
+-> Before actually using buit-in eclipse builder, use the following command to build the native code present in jni folder
+   "ndk-build -C  C://Users..../Workpace/WifiDirectDemo"  i.e. path to the folder containing the project.
+-> Now eclipse can be used to deploy the application on mobile (Run button on eclipse)
+-> Java Code is present in src folder in the project. Native code is present in jni folder. Preserve folder structure
+
+Java Code:
+/src/DeviceDetailFragment.java holds the main java code
+/jni/native-audio-jni.c holds the C code
